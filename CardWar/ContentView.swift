@@ -23,9 +23,10 @@ struct ContentView: View {
                 .ignoresSafeArea()
                 
             
-            VStack(spacing: 60) {
-                Image("logo")
+            VStack {
                 
+                Image("logo")
+                Spacer()
                 HStack {
                     Spacer()
                     
@@ -38,13 +39,13 @@ struct ContentView: View {
                     
                     Spacer()
                 }
-                
+                Spacer()
                 Button {
                     deal()
                 } label: {
                     Image("button")
                 }
-                
+                Spacer()
                 HStack {
                     Spacer()
                     
@@ -69,6 +70,7 @@ struct ContentView: View {
                 .fontWeight(.bold)
                 .foregroundColor(Color.white)
             }
+            .padding()
         }
         
         
@@ -76,10 +78,10 @@ struct ContentView: View {
     
      func deal() {
        // Randomize the player card
-        playerCard = playerCard.setRandomCard()
+        playerCard = .setRandomCard()
         
        // Randomize the cpus card
-        cpuCard = cpuCard.setRandomCard()
+         cpuCard = .setRandomCard()
         
        // Update the score
         if playerCard.score > cpuCard.score {

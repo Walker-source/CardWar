@@ -9,7 +9,7 @@ struct Card {
     let name: String
     let score: Int
     
-    func setRandomCard() -> Card {
+    static func setRandomCard() -> Card {
         let score = Int.random(in: 2...14)
         
         return Card(name: "card" + String(score), score: score)
